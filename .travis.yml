@@ -20,8 +20,8 @@ before_install:
 - sfdx --version
 - sfdx plugins --core
 script:
-- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a DevHub --wait 2
-- sfdx force:org:display -u DevHub
-- sfdx force:source:push -u DevHub
-- sfdx force:apex:test:run -u DevHub --wait 10
-- sfdx force:org:delete -u DevHub -p
+- sfdx force:org:create -v DevHub -s -f config/project-scratch-def.json -a DevHubTest --wait 2
+- sfdx force:org:display -u DevHubTest
+- sfdx force:source:push -u DevHubTest
+- sfdx force:apex:test:run -u DevHubTest --wait 10
+- sfdx force:org:delete -u DevHubTest -p
