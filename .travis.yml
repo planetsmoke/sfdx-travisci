@@ -18,6 +18,7 @@ before_install:
 - sfdx --version
 - sfdx plugins --core
 script:
+sfdx force:auth:jwt:grant --clientid {$CONSUMERKEY} --username {$USERNAME} --setdefaultdevhubusername
 - sfdx force:org:create -v DevHub -s -f config/project-scratch-def.json -a DevHubTest
   --wait 2
 - sfdx force:org:display -u DevHubTest
